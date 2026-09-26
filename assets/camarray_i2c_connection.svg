@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #111; }
+      .subtitle { font: 400 20px Arial, sans-serif; fill: #444; }
+      .head { font: 700 24px Arial, sans-serif; fill: #111; }
+      .label { font: 600 20px Arial, sans-serif; fill: #111; }
+      .small { font: 400 17px Arial, sans-serif; fill: #333; }
+      .pin { fill: #fff; stroke: #222; stroke-width: 2.5; }
+      .board { fill: #f6f8fa; stroke: #24292f; stroke-width: 3; rx: 24; }
+      .wire1 { stroke: #b42318; stroke-width: 6; fill: none; }
+      .wire2 { stroke: #d97706; stroke-width: 6; fill: none; }
+      .wire3 { stroke: #2563eb; stroke-width: 6; fill: none; }
+      .wire4 { stroke: #ea580c; stroke-width: 6; fill: none; }
+      .wire5 { stroke: #16a34a; stroke-width: 6; fill: none; }
+      .wire6 { stroke: #111827; stroke-width: 6; fill: none; }
+      .csi { stroke: #7c3aed; stroke-width: 10; fill: none; stroke-dasharray: 18 12; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="900" fill="#ffffff"/>
+  <text x="700" y="60" text-anchor="middle" class="title">Arducam CamArray HAT ↔ Raspberry Pi 2×3 Header Connection</text>
+  <text x="700" y="95" text-anchor="middle" class="subtitle">Exact one-to-one mapping of Raspberry Pi physical pins 1–6 to the CamArray / synchronized stereo HAT 2×3 header</text>
+
+  <rect x="90" y="160" width="430" height="520" class="board"/>
+  <text x="305" y="205" text-anchor="middle" class="head">Raspberry Pi 40-pin GPIO header</text>
+  <text x="305" y="235" text-anchor="middle" class="small">Only physical pins 1–6 are shown</text>
+
+  <rect x="880" y="160" width="430" height="520" class="board"/>
+  <text x="1095" y="205" text-anchor="middle" class="head">Arducam CamArray HAT</text>
+  <text x="1095" y="235" text-anchor="middle" class="small">2×3 power / I²C header</text>
+
+  <!-- Pi pins -->
+  <g>
+    <circle cx="220" cy="310" r="34" class="pin"/><text x="220" y="318" text-anchor="middle" class="label">1</text><text x="135" y="316" text-anchor="end" class="label">3V3</text>
+    <circle cx="390" cy="310" r="34" class="pin"/><text x="390" y="318" text-anchor="middle" class="label">2</text><text x="475" y="316" class="label">5V</text>
+    <circle cx="220" cy="420" r="34" class="pin"/><text x="220" y="428" text-anchor="middle" class="label">3</text><text x="135" y="414" text-anchor="end" class="label">SDA1</text><text x="135" y="438" text-anchor="end" class="small">GPIO2</text>
+    <circle cx="390" cy="420" r="34" class="pin"/><text x="390" y="428" text-anchor="middle" class="label">4</text><text x="475" y="428" class="label">5V</text>
+    <circle cx="220" cy="530" r="34" class="pin"/><text x="220" y="538" text-anchor="middle" class="label">5</text><text x="135" y="524" text-anchor="end" class="label">SCL1</text><text x="135" y="548" text-anchor="end" class="small">GPIO3</text>
+    <circle cx="390" cy="530" r="34" class="pin"/><text x="390" y="538" text-anchor="middle" class="label">6</text><text x="475" y="538" class="label">GND</text>
+  </g>
+
+  <!-- HAT pins -->
+  <g>
+    <circle cx="1010" cy="310" r="34" class="pin"/><text x="1010" y="318" text-anchor="middle" class="label">1</text><text x="940" y="316" text-anchor="end" class="label">3V3</text>
+    <circle cx="1180" cy="310" r="34" class="pin"/><text x="1180" y="318" text-anchor="middle" class="label">2</text><text x="1250" y="316" class="label">5V</text>
+    <circle cx="1010" cy="420" r="34" class="pin"/><text x="1010" y="428" text-anchor="middle" class="label">3</text><text x="940" y="428" text-anchor="end" class="label">SDA</text>
+    <circle cx="1180" cy="420" r="34" class="pin"/><text x="1180" y="428" text-anchor="middle" class="label">4</text><text x="1250" y="428" class="label">5V</text>
+    <circle cx="1010" cy="530" r="34" class="pin"/><text x="1010" y="538" text-anchor="middle" class="label">5</text><text x="940" y="538" text-anchor="end" class="label">SCL</text>
+    <circle cx="1180" cy="530" r="34" class="pin"/><text x="1180" y="538" text-anchor="middle" class="label">6</text><text x="1250" y="538" class="label">GND</text>
+  </g>
+
+  <!-- Wires -->
+  <path d="M254 310 C500 280 760 280 976 310" class="wire1"/>
+  <path d="M424 310 C610 330 820 330 1146 310" class="wire2"/>
+  <path d="M254 420 C520 390 730 390 976 420" class="wire3"/>
+  <path d="M424 420 C610 450 820 450 1146 420" class="wire4"/>
+  <path d="M254 530 C520 500 730 500 976 530" class="wire5"/>
+  <path d="M424 530 C610 560 820 560 1146 530" class="wire6"/>
+
+  <text x="700" y="725" text-anchor="middle" class="head">MIPI CSI ribbon cable carries the synchronized image stream</text>
+  <path d="M460 770 C650 830 800 830 940 770" class="csi" marker-end="url(#arrow)"/>
+  <text x="700" y="850" text-anchor="middle" class="small">Power OFF before connecting/disconnecting the 2×3 header or CSI ribbon. Pin numbers are physical Raspberry Pi header numbers.</text>
+</svg>
